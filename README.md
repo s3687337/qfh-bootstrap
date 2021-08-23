@@ -1,2 +1,2 @@
 # qfh-bootstrap
-Customised bootstrap library for a super secret project.
+Live examples of a customised bootstrap library for a super secret project.
