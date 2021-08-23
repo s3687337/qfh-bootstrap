@@ -1,0 +1,90 @@
+// --------------- CUSTOM COLORS ---------------
+
+// color variables (if you want to add a custom color here, you must also 
+// add an equivalent to the $custom-theme-colors map below)
+$primary:       #1f7ba0;
+$secondary:     #f094f3;
+$success:       #07be97;
+$info:          #4ec8fa;
+$warning:       #faad66;
+$danger:        #96103d;
+$light:         #dedee0;
+$dark:          #1a1e20;
+$primarylight:  #98d5e7;
+$primarydark:   #173342;
+$secondarylight:#facaf6;
+$secondarydark: #5f206b;
+
+// --------------- CUSTOM FONTS ---------------
+
+$font-family-sans-serif:
+  // Cross-platform generic font family (default user interface font)
+  system-ui,
+  // Safari for macOS and iOS (San Francisco)
+  -apple-system,
+  // Windows
+  "Segoe UI",
+  // Android
+  Roboto,
+  // Basic web fallback
+  "Helvetica Neue", Arial,
+  // Linux
+  "Noto Sans",
+  "Liberation Sans",
+  // Sans serif fallback
+  sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+// --------------- CUSTOM COLORS PART 2 ---------------
+
+// these must be imported before the custom-theme-colors "map" can be overridden
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/_variables";
+
+// this is where we can add custom "theme" colors
+$custom-theme-colors: (
+    "primarylight":   $primarylight,
+    "primarydark":    $primarydark,
+    "secondarylight": $secondarylight,
+    "secondarydark":  $secondarydark
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+// new we can import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// custom css can be declared -after- bootstrap
+
+// --------------- CUSTOM CSS ---------------
+.btn{
+    border-radius: 50rem;
+}
+
+.form-control{
+    outline:0;
+    border-width: 0 0 2px;
+    border-color: $dark;
+}
+
+.form-control:focus{
+    border-color:$primary;
+    box-shadow: none;
+}
+
+.bg-primarylight{
+    background-color: $primarylight;
+}
+
+.bg-secondarylight {
+    background-color: $secondarylight;
+}
+
+.bg-primarydark {
+    background-color: $primarydark;
+}
+
+.bg-secondarydark {
+    background-color: $secondarydark;
+}
